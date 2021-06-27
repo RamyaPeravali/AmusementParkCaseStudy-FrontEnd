@@ -1,0 +1,16 @@
+H1 {
+    font-size: 25px;
+    color: rgb(17, 16, 16);  
+}
+
+th {  
+    font-size: 19px;
+    color: navy;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    font-size: 15px;
+    color: rgb(59, 54, 54);
+}

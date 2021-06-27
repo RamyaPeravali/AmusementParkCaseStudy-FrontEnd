@@ -7,13 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Welcome to AmusementPark';
-
+  title = 'Welcome to Amusement Park';
+  isAdmin:boolean=false;
   constructor(private route:Router){ } 
 
   ngOnInit():void{
     console.log("Am inside app component");
-    //this.route.navigateByUrl("/admin");
+    this.route.navigateByUrl("/admin");
+    this.route.navigateByUrl("/addcustomer");
   }
 
 }

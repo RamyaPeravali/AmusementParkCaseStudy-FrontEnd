@@ -2,24 +2,48 @@
 <div class="alert alert-success" *ngIf="msg !=undefined"> {{msg}}</div>
 <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}</div>
 
-<div  > 
+<div *ngIf="updateDiv"> 
+    <Div class="mt-2 text-center" ><H1 >Update Activity</H1> </Div>
+    <form #frm="ngForm" (ngSubmit)="updateActivity()">
+        <div class="field-name">Activity ID</div>
+        <div><input type="number" name="aid" [(ngModel)]="modifyActivity.activityId" required #accid="ngModel" class="form-control" disabled></div>
+       
+        <div class="field-name">Description</div>
+        <div><input type="text" name="name" [(ngModel)]="modifyActivity.description" required #accname="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="accname.invalid && accname.touched"> Description is required</div>
+
+        <div class="field-name">Charges</div>
+        <div><input type="text" name="bal" [(ngModel)]="modifyActivity.charges" required #accbal="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="accbal.invalid && accbal.touched">Charges required</div>
+        
+        <div class="mt-2 text-center">
+            <input type="submit" value="update Activity" [disabled]="!frm.valid" class="btn btn-secondary"/> 
+            <button type="button" (click)="cancel()" value="Cancel"   class="btn btn-success">Cancel</button>
+        </div>
+        
+    </form>
+    
+</div>
+
+<div *ngIf="!updateDiv" > 
     <Div class="mt-2 text-center" ><H1 >View All Activities</H1> </Div>
   
-    <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3" border="1">
+    <table class="table table-striped" border="1">
 
         <tr>
             <th> Activity ID</th>
             <th>Description</th>
-            <th>Charges</th>
-           
-             
+            <th>Charges</th>   
         </tr>
         <tr *ngFor="let activity of activities">
             <td>{{activity.activityId}}</td>
             <td>{{activity.description}}</td>
             <td>{{activity.charges}}</td>
      
-
+            <td>
+                <button type="button" (click)="update(activity)" value="Update"  class="btn btn-success">Update</button>
+               <!-- <button type="button" (click)="deleteAccount(account.accId)" value="Delete"  class="btn btn-danger">Delete</button> -->
+            </td>
         </tr>
     </table> 
 </div>  

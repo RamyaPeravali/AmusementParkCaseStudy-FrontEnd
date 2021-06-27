@@ -20,4 +20,8 @@ export class AdminComponent implements OnInit {
     this.customerService.viewAll().subscribe(data=>this.customers=data);
     console.log(this.customers);
   }
+  
+
+  
+
 }

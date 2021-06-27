@@ -1,0 +1,20 @@
+.test-center{
+    /* text-align: center; */
+    font-size: 25px;
+    color: rgb(17, 16, 16);  
+}
+
+.alert {
+    font-size: 15px;
+    color: red;
+}
+
+.field-name {
+    font-size: 20px;
+    color: rgb(65, 59, 59);
+}
+
+.btn {
+    background-color: green;
+    color: white;
+ }

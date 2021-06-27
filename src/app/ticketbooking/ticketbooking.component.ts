@@ -8,11 +8,11 @@ import { TicketbookingService } from '../ticketbooking.service';
   styleUrls: ['./ticketbooking.component.css']
 })
 export class TicketbookingComponent implements OnInit {
-
   ticketbookings:Ticketbooking[]=[];
   
   msg:string;
   errorMsg:string;
+
   constructor(private ticketbookingService:TicketbookingService) { }
 
   ngOnInit(): void {
@@ -20,5 +20,5 @@ export class TicketbookingComponent implements OnInit {
     this.ticketbookingService.viewAll().subscribe(data=>{console.log(data);this.ticketbookings=data});
     console.log(this.ticketbookings);
   }
-  
+
 }

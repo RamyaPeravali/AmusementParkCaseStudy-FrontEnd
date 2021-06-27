@@ -1,0 +1,44 @@
+<div *ngIf="booking">
+<section class="col-md-4 mx-auto" layout="column" layout-align="center" >
+    
+    <h2 class="test-center">Book Tickets</h2>
+    <div class="alert alert-success" *ngIf="msg !=undefined"> {{msg}}</div>
+    <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}</div>
+    
+    <form #frm="ngForm" (ngSubmit)="bookticket()">
+        <div class="field-name">Activity Name</div>
+        <h4>{{activity.description}}</h4>
+
+        <div class="field-name">Dateof visiting</div>
+        <div><input type="text" name="Dov" [(ngModel)]="ticketbooking.dateOfVisting" required #mlcname="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="mlcname.invalid && mlcname.touched"> date is required</div>
+        
+        <div class="field-name">number of tickets</div>
+        <div><input type="text" name="not" [(ngModel)]="ticketbooking.numberOfTickets" required #mlcname="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="mlcname.invalid && mlcname.touched"> number is required</div>
+
+        <div class="mt-2 text-center"><input type="submit"  value="Book ticket" [disabled]="!frm.valid" class="btn btn-primary"/> </div>
+    </form>
+
+</section>
+</div>
+<div *ngIf="!booking">
+<Div class="mt-2 text-center" ><H1 >View All Activities</H1> </Div>
+  
+    <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3" border="1">
+
+        <tr>
+            <th> Activity ID</th>
+            <th>Description</th>
+            <th>Charges</th>     
+        </tr>
+        <tr *ngFor="let activity of activities">
+            <td>{{activity.activityId}}</td>
+            <td>{{activity.description}}</td>
+            <td>{{activity.charges}}</td>
+            <td>
+                <button type="button" (click)="book(activity)" value="Book Tickets"  class="btn btn-success">Book Tickets</button>  
+            </td>
+        </tr>
+    </table> 
+</div>
