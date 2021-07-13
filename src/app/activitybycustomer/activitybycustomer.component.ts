@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Activity } from '../activity';
 import { ActivityService } from '../activity.service';
-//import { Ticketbooking } from '../ticketbooking';
+import { Logindto } from '../logindto';
+import { Ticketbooking } from '../ticketbooking';
 import { Ticketbookingdto } from '../ticketbookingdto';
 
 @Component({
@@ -10,12 +11,15 @@ import { Ticketbookingdto } from '../ticketbookingdto';
   styleUrls: ['./activitybycustomer.component.css']
 })
 export class ActivitybycustomerComponent implements OnInit {
+
   activities:Activity[]=[];
   ticketbooking:Ticketbookingdto=new Ticketbookingdto();
   booking:boolean=false;
   msg:string;
   errorMsg:string;
   activity:Activity=new Activity();
+  logindto:Logindto=new Logindto();
+
   constructor(private activityService:ActivityService) { }
 
   ngOnInit(): void {
@@ -23,37 +27,35 @@ export class ActivitybycustomerComponent implements OnInit {
     this.activityService.viewAll().subscribe(data=>this.activities=data);
     console.log(this.activities);
   }
-  book(activity:Activity)
-  {
+  book(activity:Activity) {
     console.log(JSON.stringify(activity));
     this.activity=activity;
-    this.ticketbooking.ticketBookingId=45;
+    this.ticketbooking.ticketBookingId=15;
     this.ticketbooking.activityId=activity.activityId;
-    this.ticketbooking.customerId=8;
+    this.ticketbooking.customerId=11;
     this.booking=true;
   }
-  cancel()
-  {
+
+  cancel() {
     this.booking=false;
   }
-  
-  bookticket(){
+
+  bookticket() {
     this.activityService.bookticket(this.ticketbooking)
     .subscribe
     (
       (data)=>
       {
-      console.log("data",data);
-      this.msg="ticket booking successfull";
-      this.errorMsg=undefined;
-      },      
+        console.log("data",data);
+        this.msg="ticket booking successfull";
+        this.errorMsg=undefined;
+      },
       (error)=>
       {
         this.errorMsg=error.error;
         console.log(error.error);
         this.msg=undefined
       }
-     );
-}
-
+    );
+  }
 }

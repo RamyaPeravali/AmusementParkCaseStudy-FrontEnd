@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from './loginService';
+import { StorageService } from './storage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Welcome to Amusement Park';
-  isAdmin:boolean=false;
-  constructor(private route:Router){ } 
+  title = 'Welcome to AmusementPark';
+  constructor(private route:Router,public storageservice:StorageService,public loginservice:LoginService){ } 
 
   ngOnInit():void{
     console.log("Am inside app component");
-    this.route.navigateByUrl("/admin");
-    this.route.navigateByUrl("/addcustomer");
+    
   }
+logout()
+{
 
+this.loginservice.doLogout().subscribe();
+this.storageservice.loginflag=false;
+localStorage.removeItem("userinfo");
+this.route.navigateByUrl("/login");
+}
 }

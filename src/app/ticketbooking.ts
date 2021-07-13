@@ -2,9 +2,7 @@ export class Ticketbooking {
     ticketBookingId:number;
 	 activity:Activity=new Activity();
 	 customer:Customer=new Customer();
-     dateOfBooking: Date;
-     bill: number;
-	 dateOfVisiting:Date;
+	 dateOfVisiting:string;
 	 numberOfTickets:number;
 }
 export class Activity {

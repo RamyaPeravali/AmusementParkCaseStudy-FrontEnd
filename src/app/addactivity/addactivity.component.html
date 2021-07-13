@@ -1,23 +1,28 @@
 <section class="col-md-4 mx-auto" layout="column" layout-align="center" >
     
-    <h2 class="test-center">Add Activity</h2>
+    <h2 class="test-center">Add Account</h2>
     <div class="alert alert-success" *ngIf="msg !=undefined"> {{msg}}</div>
     <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}</div>
     
     <form #frm="ngForm" (ngSubmit)="addActivity()">
-        <div class="field-name">Activity ID</div>
+        <div>Activity ID</div>
         <div><input type="number" name="aid" [(ngModel)]="activity.activityId" required #modelaid="ngModel" class="form-control"></div>
         <div class="alert alert-danger" *ngIf="modelaid.invalid && modelaid.touched">Activity ID is required</div>
 
-        <div class="field-name">Description</div>
+        <div>
+        <div>Description</div>
         <div><input type="text" name="cname" [(ngModel)]="activity.description" required #mlcname="ngModel" class="form-control"/></div>
-        <div class="alert alert-danger" *ngIf="mlcname.invalid && mlcname.touched"> Description is required</div>
-
-        <div class="field-name">Charges</div>
-        <div><input type="text" name="cname" [(ngModel)]="activity.charges" required #mlbal="ngModel" class="form-control"/></div>
-        <div class="alert alert-danger" *ngIf="mlbal.invalid && mlbal.touched"> Charges are required</div>
-
+        <div class="alert alert-danger" *ngIf="mlcname.touched&& mlcname.errors?.required"> Description is required</div>
+        </div>
+    
+        <div>
+        <div>Charges</div>
+        <div><input type="text" name="cname" [(ngModel)]="activity.charges" required #mlbal="ngModel" class="form-control" pattern="^[1-9]\d{0,7}(?:\.\d{1,4})?$"/></div>
+        <div class="alert alert-danger" *ngIf="mlbal.touched&& mlbal.errors?.required"> Charges are required</div>
+        <div class="alert alert-danger" *ngIf="mlbal.errors?.pattern">invalid charges</div>
+        </div>
         <div class="mt-2 text-center"><input type="submit" value="Add Activity" [disabled]="!frm.valid" class="btn btn-primary"/> </div>
+    
     </form>
 
 </section>

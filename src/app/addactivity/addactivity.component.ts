@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Activity } from '../activity';
 import { ActivityService } from '../activity.service';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-addactivity',
@@ -9,12 +11,15 @@ import { ActivityService } from '../activity.service';
 })
 export class AddactivityComponent implements OnInit {
   activity:Activity=new Activity();
+  
   msg:String;
   errorMsg:String;
-  constructor(private activityService:ActivityService) { }
+  constructor(private activityService:ActivityService,public storageservice:StorageService,public router:Router) { }
 
 
   ngOnInit(): void {
+    if(this.storageservice.loginflag==false || this.storageservice.role !='admin')
+    this.router.navigateByUrl("/login");
   }
   addActivity(){
     this.activityService.addActivity(this.activity)
