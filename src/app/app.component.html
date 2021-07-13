@@ -8,7 +8,8 @@
   <li *ngIf="storageservice.loginflag && storageservice.role=='admin' "><a  routerLink="admin" > Customers</a></li>
   <li *ngIf="storageservice.loginflag && storageservice.role=='customer'"><a  routerLink="activitybycustomer" > Activities</a></li>
   <li *ngIf="storageservice.loginflag && storageservice.role=='admin'"><a  routerLink="addactivity" >Add Activity</a></li>
-  <li *ngIf="storageservice.loginflag && storageservice.role=='customer'"><a  routerLink="viewbybycustomer" > Profile</a></li>
+  <li *ngIf="storageservice.loginflag && storageservice.role=='customer'"><a  routerLink="ticketbycustomer" > My Tickets</a></li>
+  <li *ngIf="storageservice.loginflag && storageservice.role=='customer'"><a  routerLink="customerbyid" > Profile</a></li>
   <li *ngIf="!storageservice.loginflag "><a routerLink="login" >Login</a></li>
   <li *ngIf="storageservice.loginflag"><a (click)="logout()" >Logout</a></li>
 

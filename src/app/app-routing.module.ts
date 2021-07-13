@@ -7,6 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TicketbookingComponent } from './ticketbooking/ticketbooking.component';
+import { TicketbycustomerComponent } from './ticketbycustomer/ticketbycustomer.component';
 
 const routes: Routes = [
   {path:'admin', component:AdminComponent},
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path:'addactivity',component:AddactivityComponent},
   {path:'ticketbooking',component:TicketbookingComponent},
   {path:'login',component:LoginComponent},
-  
+  {path:'ticketbycustomer',component:TicketbycustomerComponent},
 ];
 
 @NgModule({

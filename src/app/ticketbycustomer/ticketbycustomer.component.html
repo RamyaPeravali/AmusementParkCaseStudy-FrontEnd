@@ -1,0 +1,28 @@
+<div class="alert alert-success" *ngIf="msg !=undefined"> {{msg}}</div>
+<div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}</div>
+
+<div  > 
+    <Div class="mt-2 text-center" ><H1 >View All Tickets</H1> </Div>
+  
+    <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3" border="1">
+
+        <tr>
+            <th> Ticket Id</th>
+            <th> Customer Id</th>
+            <th> Activity Id</th>
+            <th> Date of Booking</th>
+            <th> Date of Visiting</th>
+            <th> Number of Tickets</th>
+            <th> Bill</th>
+        </tr>
+        <tr *ngFor="let ticket of tickets">
+            <td>{{ticket.ticketBookingId}}</td>
+            <td>{{ticket.customer.userId}}</td>
+            <td>{{ticket.activity.activityId}}</td>
+            <td>{{ticket.dateOfBooking}}</td>
+            <td>{{ticket.dateOfVisiting}}</td>
+            <td>{{ticket.numberOfTickets}}</td>
+            <td>{{ticket.bill}}</td>
+        </tr>
+    </table> 
+</div>  
