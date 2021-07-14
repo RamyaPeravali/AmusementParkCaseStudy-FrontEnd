@@ -1,0 +1,31 @@
+<div class="section">
+    <input type="date" [(ngModel)] = "ticketdt"/>
+    <input type="button" (click)="viewtickets()" value="View Tickets"/>
+</div>
+    <div *ngIf = "msg != undefined" class="msg">
+        {{msg}}
+    </div>
+    <table *ngIf = "msg == undefined" class="tbl">
+        <thead>
+        <tr class="table-success">
+            <th>Booking Id</th>
+            <th>Activity Description</th>
+            <th>Total Cost</th>
+            <th>Number of Tickets</th>
+            <th>Customer Name</th>
+            <th>Date of Booking</th>
+            <th>Date of Visiting</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let ticket of tickets">
+            <td>{{ticket.ticketBookingId}}</td>
+            <td>{{ticket.activity.description}}</td>
+            <td>{{ticket.bill}}</td>
+            <td>{{ticket.numberOfTickets}}</td>
+            <td>{{ticket.customer.username}}</td>
+            <td>{{ticket.dateOfBooking}}</td>
+            <td>{{ticket.dateOfVisiting}}</td>
+        </tr>
+    </tbody>
+    </table>

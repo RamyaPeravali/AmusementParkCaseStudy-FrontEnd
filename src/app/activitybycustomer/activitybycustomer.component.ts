@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Activity } from '../activity';
 import { ActivityService } from '../activity.service';
 import { Logindto } from '../logindto';
-import { Ticketbooking } from '../ticketbooking';
 import { Ticketbookingdto } from '../ticketbookingdto';
 
 @Component({
@@ -30,7 +29,7 @@ export class ActivitybycustomerComponent implements OnInit {
   book(activity:Activity) {
     console.log(JSON.stringify(activity));
     this.activity=activity;
-    this.ticketbooking.ticketBookingId=15;
+    this.ticketbooking.ticketBookingId=this.ticketbooking.ticketBookingId;
     this.ticketbooking.activityId=activity.activityId;
     this.ticketbooking.customerId=11;
     this.booking=true;

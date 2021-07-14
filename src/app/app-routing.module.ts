@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TicketbookingComponent } from './ticketbooking/ticketbooking.component';
 import { TicketbycustomerComponent } from './ticketbycustomer/ticketbycustomer.component';
+import { ViewbydateComponent } from './viewbydate/viewbydate.component';
 
 const routes: Routes = [
   {path:'admin', component:AdminComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'ticketbooking',component:TicketbookingComponent},
   {path:'login',component:LoginComponent},
   {path:'ticketbycustomer',component:TicketbycustomerComponent},
+  {path:'viewtktbydate',component:ViewbydateComponent},
 ];
 
 @NgModule({

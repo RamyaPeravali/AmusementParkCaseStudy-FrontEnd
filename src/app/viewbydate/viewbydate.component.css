@@ -1,0 +1,34 @@
+.section {
+    width: 400px;
+    background-color: cyan;
+    box-shadow: 5px 5px 5px black;
+    margin: 10px auto;
+    text-align: center;
+    padding: 10px;
+}
+.tbl thead th{
+    background-color: blanchedalmond;
+
+}
+
+.tbl th,td {
+    padding: 10px;
+}
+
+.tbl tbody tr:nth-child(even) {
+    background-color: cadetblue;
+}
+
+.tbl tbody tr:nth-child(odd) {
+    background-color: darkcyan;
+}
+
+.msg {
+    width: 200px;
+    background-color: red;
+    box-shadow: 5px 5px 5px black;
+    margin: 10px auto;
+    text-align: center;
+    color: text-white;
+    padding: 10px;
+}

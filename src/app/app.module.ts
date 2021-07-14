@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { ActivitybycustomerComponent } from './activitybycustomer/activitybycustomer.component';
 import { TicketbycustomerComponent } from './ticketbycustomer/ticketbycustomer.component';
 import { TicketbookingComponent } from './ticketbooking/ticketbooking.component';
+import { ViewbydateComponent } from './viewbydate/viewbydate.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TicketbookingComponent } from './ticketbooking/ticketbooking.component'
     AddactivityComponent,  
     LoginComponent,
     ActivitybycustomerComponent,
-    TicketbycustomerComponent
+    TicketbycustomerComponent,
+    ViewbydateComponent
   ],
   imports: [
     BrowserModule,

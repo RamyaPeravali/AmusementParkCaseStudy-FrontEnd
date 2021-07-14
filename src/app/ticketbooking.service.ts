@@ -22,4 +22,9 @@ export class TicketbookingService {
     console.log("Am inside ticketbooking service");
     return this.http.put("http://localhost:6081/updateticket",ticketbooking,{responseType:'text'});
   } 
+  public viewTicketsByDate(dt:string):Observable<any>{
+    console.log("Am inside ticketbooking service");
+    return this.http.get("http://localhost:6081/viewticketsbydate/"+dt);
+  } 
+
 }
