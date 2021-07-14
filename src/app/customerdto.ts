@@ -1,10 +1,9 @@
 export class Customerdto {
-    customerId:number;
-    type:string;
-    username:String;
-	password:String;
+    userId:number;
+    role:string;
+    username:string;
+	password:string;
     mobileNumber:number;
     email:string;
 	address:string;
-     
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Activity } from '../activity';
 import { ActivityService } from '../activity.service';
 import { Logindto } from '../logindto';
+import { StorageService } from '../storage.service';
 import { Ticketbookingdto } from '../ticketbookingdto';
 
 @Component({
@@ -19,7 +20,7 @@ export class ActivitybycustomerComponent implements OnInit {
   activity:Activity=new Activity();
   logindto:Logindto=new Logindto();
 
-  constructor(private activityService:ActivityService) { }
+  constructor(private activityService:ActivityService,private storageService:StorageService) { }
 
   ngOnInit(): void {
     console.log("Am inside view component");
@@ -29,9 +30,9 @@ export class ActivitybycustomerComponent implements OnInit {
   book(activity:Activity) {
     console.log(JSON.stringify(activity));
     this.activity=activity;
-    this.ticketbooking.ticketBookingId=this.ticketbooking.ticketBookingId;
+    this.ticketbooking.ticketBookingId=15;
     this.ticketbooking.activityId=activity.activityId;
-    this.ticketbooking.customerId=11;
+    this.ticketbooking.userId=this.storageService.userId;
     this.booking=true;
   }
 

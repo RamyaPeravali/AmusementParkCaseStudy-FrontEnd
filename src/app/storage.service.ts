@@ -11,6 +11,7 @@ export class StorageService {
   loginflag:boolean;
   username:string;
   role:string;
+  userId:number;
 
   constructor(public http:HttpClient) {
     if (localStorage.getItem("userinfo")!=null)
@@ -18,6 +19,7 @@ export class StorageService {
       this.loginflag=true;
       this.username=JSON.parse(localStorage.getItem("userinfo")).userName;
       this.role=JSON.parse(localStorage.getItem("userinfo")).role;
+      this.userId=JSON.parse(localStorage.getItem("userinfo")).userId;
     }
    }
 

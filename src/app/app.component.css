@@ -25,3 +25,13 @@ li a:hover:not(.active) {
 .active {
   background-color: #4CAF50;
 }
+
+.jumbotron {
+  background-image: url(../assets/img/img1.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+}

@@ -1,5 +1,5 @@
 export class Customer {
-    customerId:number;
+    role:string;
     userId:number;
     username:string;
     password:string;

@@ -14,7 +14,6 @@ export class Activity {
 }
 
 export class Customer {
-    customerId:number;
     userId:number;
     username:string;
     password:string;

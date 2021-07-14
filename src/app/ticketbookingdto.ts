@@ -1,7 +1,7 @@
 export class Ticketbookingdto {
     ticketBookingId:number;
     activityId:number;
-    customerId:number;
+    userId:number;
     dateOfVisiting:string;
 	numberOfTickets:number;
 }

@@ -9,26 +9,29 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { ActivityComponent } from './activity/activity.component';
 import { AddactivityComponent } from './addactivity/addactivity.component';
-//import { BookticketComponent } from './bookticket/bookticket.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
 import { ActivitybycustomerComponent } from './activitybycustomer/activitybycustomer.component';
 import { TicketbycustomerComponent } from './ticketbycustomer/ticketbycustomer.component';
 import { TicketbookingComponent } from './ticketbooking/ticketbooking.component';
 import { ViewbydateComponent } from './viewbydate/viewbydate.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UpdateactivityComponent } from './updateactivity/updateactivity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    HomeComponent,
     ActivityComponent,
     TicketbookingComponent,
     AddactivityComponent,  
     LoginComponent,
     ActivitybycustomerComponent,
     TicketbycustomerComponent,
-    ViewbydateComponent
+    ViewbydateComponent,
+    RegistrationComponent,
+    ProfileComponent,
+    UpdateactivityComponent
   ],
   imports: [
     BrowserModule,

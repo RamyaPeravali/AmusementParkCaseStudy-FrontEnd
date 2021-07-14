@@ -1,0 +1,38 @@
+<section class="col-md-4 mx-auto">
+    <h2 class="test-center">Please Fill Details</h2>
+    <div class="alert alert-success" *ngIf="msg !=undefined"> {{msg}}</div>
+    <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}</div>
+    
+    
+    <form #frm="ngForm" (ngSubmit)="addCustomer()">
+        
+        <div> Name</div>
+        <div><input type="text" name="cname" [(ngModel)]="customer.username" required pattern="[A-Za-z]+" #mluname="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="mluname.errors?.required && mluname.touched"> Customer Name is required</div>
+        <div class="alert alert-danger" *ngIf="mluname.errors?.pattern && mluname.touched"> Customer name is invalid</div>
+
+
+        <div>Password</div>
+        <div><input type="password" name="aid" [(ngModel)]="customer.password" required pattern=".{6,}" #modelaid="ngModel" class="form-control"></div>
+        <div class="alert alert-danger" *ngIf="modelaid.errors?.required && modelaid.touched">password is required</div>
+        <div class="alert alert-danger" *ngIf="modelaid.errors?.pattern && modelaid.touched">password is invalid</div>
+
+        <div>Mobile</div>
+        <div><input type="number" name="cphno" [(ngModel)]="customer.mobileNumber" required pattern="[7-9]{1}[0-9]{9}" #mlbal="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="mlbal.errors?.required && mlbal.touched">phone number is required</div>
+        <div class="alert alert-danger" *ngIf="mlbal.errors?.pattern && mlbal.touched">phone number is invalid</div>
+
+
+        <div>Email</div>
+        <div><input type="text" name="cemail" [(ngModel)]="customer.email" required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" #memail="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="memail.errors?.required && memail.touched">mail is required</div>
+        <div class="alert alert-danger" *ngIf="memail.errors?.pattern && memail.touched">mail is invalid</div>
+
+        <div>Address</div>
+        <div><input type="textarea" name="caddress" [(ngModel)]="customer.address" required pattern="[A-Za-z]+" #madd="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="madd.errors?.required && madd.touched">address is required</div>
+        <div class="alert alert-danger" *ngIf="madd.errors?.pattern && madd.touched">address is invalid</div>
+
+        <div class="mt-2 text-center"><input type="submit" value="Register" [disabled]="!frm.valid" class="btn btn-info"/> </div>
+    </form>
+</section>
