@@ -12,10 +12,10 @@ import { AddactivityComponent } from './addactivity/addactivity.component';
 import { LoginComponent } from './login/login.component';
 import { ActivitybycustomerComponent } from './activitybycustomer/activitybycustomer.component';
 import { TicketbycustomerComponent } from './ticketbycustomer/ticketbycustomer.component';
-import { TicketbookingComponent } from './ticketbooking/ticketbooking.component';
 import { ViewbydateComponent } from './viewbydate/viewbydate.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TicketbookingComponent } from './ticketbooking/ticketbooking.component';
 import { UpdateactivityComponent } from './updateactivity/updateactivity.component';
 
 @NgModule({
@@ -31,7 +31,7 @@ import { UpdateactivityComponent } from './updateactivity/updateactivity.compone
     ViewbydateComponent,
     RegistrationComponent,
     ProfileComponent,
-    UpdateactivityComponent
+    UpdateactivityComponent,
   ],
   imports: [
     BrowserModule,

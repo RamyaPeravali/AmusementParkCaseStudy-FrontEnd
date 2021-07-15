@@ -1,7 +1,5 @@
 
-
-
-  <div class="jumbotron text-black jumbotron-image shadow">
+<div class="jumbotron text-black jumbotron-image shadow">
    &nbsp;
    &nbsp;
    <header class="jumbotron text-center">
@@ -25,7 +23,6 @@
   <li *ngIf="storageservice.loginflag && storageservice.role=='customer'"><a  routerLink="activitybycustomer" > Activities</a></li>
   <li *ngIf="storageservice.loginflag && storageservice.role=='admin'"><a  routerLink="addactivity" >Add Activity</a></li>
   <li *ngIf="storageservice.loginflag && storageservice.role=='admin'"><a  routerLink="updateactivity" >Update Activity</a></li>
-  <li *ngIf="storageservice.loginflag && storageservice.role=='customer'"><a  routerLink="ticketbycustomer" > My Tickets</a></li>
   <li *ngIf="storageservice.loginflag && storageservice.role=='customer'"><a  routerLink="profile" > Profile</a></li>
   <li *ngIf="storageservice.loginflag && storageservice.role=='admin'"><a  routerLink="viewtktbydate" > View Tickets</a></li> 
   <li *ngIf="!storageservice.loginflag "><a routerLink="login" >Login</a></li>
@@ -34,7 +31,5 @@
 
 </ul>
 </div>
-<!--
-<div class="name"><h4>{{storageservice.username|titlecase}}</h4></div> 
--->
+
 <router-outlet></router-outlet>
