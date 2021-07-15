@@ -3,11 +3,13 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgba(55, 113, 238, 0.849);
+ 
+  background: linear-gradient(to top left, #000066 0%, #3366cc 100%);
 }
 
 li {
   float: left;
+  font-weight: bold;
 }
 
 li a {
@@ -19,15 +21,15 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: rgb(15, 9, 87);
+  color : #3366cc;
+  background-color: rgb(250, 250, 250);
+  font-weight: bold;
 }
 
-.active {
-  background-color: #4CAF50;
-}
+
 
 .jumbotron {
-  background-image: url(../assets/img/img1.jpg); 
+  background-image: url(../assets/img/img1.png); 
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -35,3 +37,4 @@ li a:hover:not(.active) {
 h1 {
   color: white;
 }
+

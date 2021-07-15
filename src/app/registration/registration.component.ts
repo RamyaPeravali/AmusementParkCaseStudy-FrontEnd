@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Customerdto } from '../customerdto';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-registration',
@@ -9,15 +10,15 @@ import { Customerdto } from '../customerdto';
 })
 export class RegistrationComponent implements OnInit {
     msg:String | undefined;
-    errorMsg:String | undefined; 
+    errorMsg:String | undefined;  
     customer:Customerdto=new Customerdto();
     
-   constructor(private customerService:CustomerService) { }
+   constructor(private customerService:CustomerService,public storageservice:StorageService) { }
  
    ngOnInit(): void {
    }
    addCustomer(){
-    this.customer.role="Customer";
+    this.customer.role="customer";
     this.customer.userId=0;
      this.customerService.addCustomer(this.customer)
      .subscribe
@@ -25,7 +26,7 @@ export class RegistrationComponent implements OnInit {
        (data)=>
        {
        console.log("data",data);
-       this.msg="Registration Successful";
+       this.msg=data.message;
        this.errorMsg=undefined;
        },      
        (error)=>

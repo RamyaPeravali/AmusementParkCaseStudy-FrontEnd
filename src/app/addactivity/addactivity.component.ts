@@ -22,13 +22,14 @@ export class AddactivityComponent implements OnInit {
     this.router.navigateByUrl("/login");
   }
   addActivity(){
+    this.activity.activityId=0;
     this.activityService.addActivity(this.activity)
     .subscribe
     (
       (data)=>
       {
       console.log("data",data);
-      this.msg=data;
+      this.msg="Activity Added";
       this.errorMsg=undefined;
       },      
       (error)=>

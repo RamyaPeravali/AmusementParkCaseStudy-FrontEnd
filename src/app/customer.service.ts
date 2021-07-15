@@ -18,11 +18,11 @@ export class CustomerService {
   } 
 
   public addCustomer(customer:Customerdto):Observable<any>{
-    return this.http.post("http://localhost:6081/addcustomer",customer,{responseType:'text'});
+    return this.http.post("http://localhost:6081/addcustomer",customer);
   }
 
   public updateCustomer(customer:Customerdto):Observable<any>{
-    return this.http.put("http://localhost:6071/updatecustomer",customer,{responseType:'text'});
+    return this.http.put("http://localhost:6071/updatecustomer",customer);
   }
 
   public viewById(cid:number):Observable<any>

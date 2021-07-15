@@ -1,13 +1,22 @@
 .section {
+
     width: 400px;
-    background-color: cyan;
+    background-color: rgb(244, 248, 248);
     box-shadow: 5px 5px 5px black;
     margin: 10px auto;
     text-align: center;
     padding: 10px;
 }
+.tbl{
+    
+    margin: 10px auto;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid;
+
+}
 .tbl thead th{
-    background-color: blanchedalmond;
+    background-color: rgb(255, 255, 255);
 
 }
 
@@ -15,13 +24,11 @@
     padding: 10px;
 }
 
-.tbl tbody tr:nth-child(even) {
-    background-color: cadetblue;
+.tbl tbody tr {
+    background-color: rgb(255, 255, 255);
 }
 
-.tbl tbody tr:nth-child(odd) {
-    background-color: darkcyan;
-}
+
 
 .msg {
     width: 200px;

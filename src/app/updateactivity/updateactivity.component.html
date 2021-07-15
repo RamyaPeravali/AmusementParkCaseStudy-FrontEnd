@@ -1,32 +1,34 @@
+<section class="col-md-4 mx-auto">
 <div class="alert alert-success" *ngIf="msg !=undefined"> {{msg}}</div>
 <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}</div>
 
-<div *ngIf="updateDiv"> 
-    <Div class="mt-2 text-center" ><H1 >Update Activity</H1> </Div>
-    <form #frm="ngForm" (ngSubmit)="updateActivity()">
-        <div>Activity ID</div>
-        <div><input type="number" name="aid" [(ngModel)]="modifyActivity.activityId" required #accid="ngModel" class="form-control" disabled></div>
-        <div class="alert alert-danger" *ngIf="des.invalid && des.touched"> Activity Id is required</div>
 
-        <div>Description</div>
+
+
+<div *ngIf="updateDiv"> 
+    <Div class="mt-2 text-center"><H2 >Update Activity</H2> </Div>
+    <form #frm="ngForm" (ngSubmit)="updateActivity()">
+        
+        <div><b>Description</b></div>
         <div><input type="text" name="name" [(ngModel)]="modifyActivity.description" required #des="ngModel" class="form-control"/></div>
         <div class="alert alert-danger" *ngIf="des.invalid && des.touched"> Description is required</div>
 
         <div>
-            <div>Charges</div>
+            <div><b>Charges</b></div>
             <div><input type="text" name="cname" [(ngModel)]="modifyActivity.charges" required #mlbal="ngModel" class="form-control" pattern="^[1-9]\d{0,7}(?:\.\d{1,4})?$"/></div>
             <div class="alert alert-danger" *ngIf="mlbal.touched&& mlbal.errors?.required"> Charges are required</div>
             <div class="alert alert-danger" *ngIf="mlbal.errors?.pattern">invalid charges</div>
             </div>
         <div class="mt-2 text-center">
-            <input type="submit" value="update Activity" [disabled]="!frm.valid" class="btn btn-secondary"/> 
-            <button type="button" (click)="cancel()" value="Cancel"   class="btn btn-success">Cancel</button>
+            <input type="submit" value="update Activity" [disabled]="!frm.valid" class="btn btn-primary"/> &nbsp;
+            <button type="button" (click)="cancel()" value="Cancel"   class="btn btn-danger">Cancel</button>
         </div>
     
         
     </form>
     
 </div>
+</section>
 
 <div *ngIf="!updateDiv" > 
     <section class="section-2 container-fluid p-0">
@@ -42,6 +44,7 @@
                 <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
                     <div class="rect" *ngFor="let activity of activities">
                         <h2>{{activity.description}}</h2> 
+                        <br>
                         <h4>{{activity.charges}}</h4><br>
                         <a  class="btn btn-primary" type="button" (click)="update(activity)" value="Update">Update</a>
                     </div>
@@ -50,14 +53,6 @@
             </div>
         
         </section>
-        <!--<div class="container-fluid text-center">
-            <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
-                <div class="rect" *ngFor="let activity of activities">
-                    <h2>{{activity.description}}</h2> 
-                    <h4>{{activity.charges}}</h4><br>
-                    <a  class="btn btn-primary" type="button" (click)="update(activity)" value="Update">Update</a>
-                </div>
-                
-            </div>-->
+        
    
 </div>

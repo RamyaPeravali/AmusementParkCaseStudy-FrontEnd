@@ -24,6 +24,7 @@ export class UpdateactivityComponent implements OnInit {
 
   update(activity:Activity)
   {
+   
     console.log(JSON.stringify(activity));
     this.modifyActivity=activity;
     this.updateDiv=true;//make update division visible
@@ -33,6 +34,7 @@ export class UpdateactivityComponent implements OnInit {
     this.updateDiv=false;//make update division invisible
   }
   updateActivity(){
+ 
     this.updateDiv=false;//make update division invisible
     this.activityService.UpdateActivity(this.modifyActivity)
           .subscribe(data=>{

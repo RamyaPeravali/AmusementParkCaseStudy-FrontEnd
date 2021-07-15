@@ -1,43 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
-    
-    <title>Home</title>
-</head>
-<body>
-    <main>     
+  
         <div *ngIf="booking">
             <section class="col-md-4 mx-auto" layout="column" layout-align="center" >
                 
-                <h2 class="test-center">Book Tickets</h2>
+                <h2 class="text-center">Book Tickets</h2>
                 <div class="alert alert-success" *ngIf="msg !=undefined"> {{msg}}</div>
                 <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}</div>
                 
                 <form #frm="ngForm" (ngSubmit)="bookticket()">
-                    <div>Activity Name</div>
+                 
                     <h4>{{activity.description}}</h4>    
                     <div>
-                    <div>Dateof visiting</div>
+                    <div><b>Date of Visiting</b></div>
                     <div><input type="text" name="Dov" [(ngModel)]="ticketbooking.dateOfVisiting" required #mlcname="ngModel" class="form-control" pattern="^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$"/></div>
                     <div class="alert alert-danger" *ngIf="mlcname.invalid && mlcname.touched"> date is required</div>
                     <div class="alert alert-danger" *ngIf="mlcname.errors?.pattern"> date must be in YYYY-MM-DD format</div>
                     </div>
-                    <div>number of tickets</div>
+                    <div><b>Number of Tickets</b></div>
                     <div><input type="text" name="not" [(ngModel)]="ticketbooking.numberOfTickets" required #mlcname="ngModel" class="form-control"/></div>
                     <div class="alert alert-danger" *ngIf="mlcname.invalid && mlcname.touched"> number is required</div>
             
-                    <div class="mt-2 text-center"><input type="submit"  value="Book ticket" [disabled]="!frm.valid" class="btn btn-primary"/> </div>
+                    <div class="mt-2 text-center"><input type="submit"  value="Book ticket"  class="btn btn-primary"/> </div>
                 </form>
             
             </section>
@@ -51,20 +33,19 @@
                     <h2>Book an Activity Now!!</h2>
                 </div>
             </div>
-            
+             
             <div class="container-fluid text-center">
                 <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
                     <div class="rect" *ngFor="let activity of activities">
                         <h2>{{activity.description}}</h2> 
+                    <br>
                         <h4>{{activity.charges}}</h4><br>
                         <a  class="btn btn-primary" type="button" (click)="book(activity)" value="Book Tickets">Book Now</a>
                     </div>
                     
                 </div>
-            </div>
+            </div> 
         
         </section>
      </div>
-    </main>    
-</body>
-</html>
+

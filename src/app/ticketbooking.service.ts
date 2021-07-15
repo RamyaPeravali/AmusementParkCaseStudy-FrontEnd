@@ -16,11 +16,11 @@ export class TicketbookingService {
   } 
   public bookticket(ticketbooking:Ticketbooking):Observable<any>{
     console.log("Am inside ticketbooking service");
-    return this.http.post("http://localhost:6081/bookticket",ticketbooking,{responseType:'text'});
+    return this.http.post("http://localhost:6081/bookticket",ticketbooking);
   } 
   public updateticket(ticketbooking:Ticketbooking):Observable<any>{
     console.log("Am inside ticketbooking service");
-    return this.http.put("http://localhost:6081/updateticket",ticketbooking,{responseType:'text'});
+    return this.http.put("http://localhost:6081/updateticket",ticketbooking);
   } 
   public viewTicketsByDate(dt:string):Observable<any>{
     console.log("Am inside ticketbooking service");

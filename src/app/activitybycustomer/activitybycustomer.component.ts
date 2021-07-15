@@ -30,7 +30,7 @@ export class ActivitybycustomerComponent implements OnInit {
   book(activity:Activity) {
     console.log(JSON.stringify(activity));
     this.activity=activity;
-    this.ticketbooking.ticketBookingId=15;
+    this.ticketbooking.ticketBookingId=0;
     this.ticketbooking.activityId=activity.activityId;
     this.ticketbooking.userId=this.storageService.userId;
     this.booking=true;
@@ -52,9 +52,8 @@ export class ActivitybycustomerComponent implements OnInit {
       },
       (error)=>
       {
-        this.errorMsg=error.error;
+        this.errorMsg="Ticket Date must be current or future";
         console.log(error.error);
-        this.msg=undefined
       }
     );
   }
