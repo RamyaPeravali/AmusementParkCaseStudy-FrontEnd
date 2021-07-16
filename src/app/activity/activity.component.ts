@@ -45,6 +45,5 @@ export class ActivityComponent implements OnInit {
               this.errorMsg=error.error;
               this.msg=undefined;
             });
-
-}
+  }
 }

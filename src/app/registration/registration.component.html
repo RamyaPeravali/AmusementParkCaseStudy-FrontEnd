@@ -30,9 +30,9 @@
         <div class="alert alert-danger" *ngIf="memail.errors?.pattern && memail.touched">mail must be in the format xyz@gmail.com</div>
 
         <div><b>City</b></div>
-        <div><input type="textarea" name="caddress" [(ngModel)]="customer.address" required pattern="[A-Za-z0-9/]+" #madd="ngModel" class="form-control"/></div>
-        <div class="alert alert-danger" *ngIf="madd.errors?.required && madd.touched">address is required</div>
-        <div class="alert alert-danger" *ngIf="madd.errors?.pattern && madd.touched">address is invalid</div>
+        <div><input type="textarea" name="caddress" [(ngModel)]="customer.address" required pattern="[A-Za-z]+" #madd="ngModel" class="form-control"/></div>
+        <div class="alert alert-danger" *ngIf="madd.errors?.required && madd.touched">city is required</div>
+        <div class="alert alert-danger" *ngIf="madd.errors?.pattern && madd.touched">city is invalid</div>
 
         <div class="mt-2 text-center"><input type="submit" value="Register"  class="btn btn-primary"/> </div>
     </form>
